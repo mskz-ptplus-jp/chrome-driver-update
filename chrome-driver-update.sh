@@ -6,8 +6,7 @@ CHROME_DRIVER="chromedriver"
 DOWNLOAD_URL="https://chromedriver.storage.googleapis.com"
 INSTALL_PATH="/usr/local/bin"
 
-#TEMPDIR=$(mktemp -d)
-TEMPDIR="/tmp/tmp.7eo6BKd5Vh"
+TEMPDIR=$(mktemp -d)
 
 # chrome check
 if ! type -a $CHROME > /dev/null 2>&1; then
@@ -42,6 +41,8 @@ if [ "$(echo "${CHROME_VERSION}" | awk '{print $3}' | awk -F '.' '{print $1 "." 
     wget $URL -O "${TEMPDIR}/${FILE}"
     unzip -o "${TEMPDIR}/${FILE}" -d "${TEMPDIR}"
     mv "${TEMPDIR}/${CHROME_DRIVER}" $INSTALL_PATH
+
+    echo "Update completed"
 else
     echo "Nothing to do"
 fi
