@@ -32,8 +32,8 @@ if [ "$(echo "${CHROME_VERSION}" | awk '{print $3}' | awk -F '.' '{print $1 "." 
     LATEST_RELEASE=$(cat "${TEMPDIR}/${FILE}")
 
     echo "Google Chrome current : ${CHROME_VERSION}"
-    echo "Google Chrome Driver current : ${CHROME_DRIVER_VERSION}"
-    echo "Google Chrome Driver latest release : ${LATEST_RELEASE}"
+    echo "Chrome Driver current : ${CHROME_DRIVER_VERSION}"
+    echo "Chrome Driver latest release : ${LATEST_RELEASE}"
 
     # download
     FILE="chromedriver_linux64.zip"
